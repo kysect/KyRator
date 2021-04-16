@@ -16,7 +16,10 @@ namespace KyRator.Data.Repositories.Implementations
         public KyRatorContext(DbContextOptions<KyRatorContext> options) : base(options)
         {
         }
-
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlite("Filename=database.db");
+        }
         public KyRatorContext()
         {
             Database.EnsureCreated();

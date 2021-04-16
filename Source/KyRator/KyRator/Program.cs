@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using KyRator.Data.Entities;
 using KyRator.Data.Repositories.Implementations;
 using KyRator.Data.Services.Implementations;
@@ -12,11 +13,9 @@ namespace KyRator
         static void Main(string[] args)
         {
             var serviceProvider = new ServiceCollection()
-                .AddDbContext<KyRatorContext>()
+                .AddEntityFrameworkSqlite().AddDbContext<KyRatorContext>()
                 .AddTransient<IDataService<Sectant>, SectantDataService>()
                 .BuildServiceProvider();
-
-
         }
     }
 }
