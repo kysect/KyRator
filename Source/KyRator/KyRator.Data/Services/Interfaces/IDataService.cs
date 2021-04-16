@@ -10,7 +10,7 @@ namespace KyRator.Data.Services.Interfaces
         where TEntity : class
     {
         TEntity Create(TEntity entity);
-        TEntity FindById(int id);
+        TEntity FindById(Guid id);
         IEnumerable<TEntity> Get();
         IEnumerable<TEntity> Get(Func<TEntity, bool> predicate);
         void Remove(TEntity entity);

@@ -28,7 +28,7 @@ namespace KyRator.Data.Repositories.Implementations
         {
             return _dbSet.Where(predicate).AsQueryable();
         }
-        public TEntity FindById(int id)
+        public TEntity FindById(Guid id)
         {
             return _dbSet.Find(id);
         }

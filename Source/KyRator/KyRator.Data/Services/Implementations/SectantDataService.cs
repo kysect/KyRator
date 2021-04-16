@@ -21,7 +21,7 @@ namespace KyRator.Data.Services.Implementations
         {
             return _repository.Create(entity);
         }
-        public Sectant FindById(int id)
+        public Sectant FindById(Guid id)
         {
             return _repository.FindById(id);
         }

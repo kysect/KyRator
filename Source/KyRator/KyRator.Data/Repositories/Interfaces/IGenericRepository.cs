@@ -10,7 +10,7 @@ namespace KyRator.Data.Repositories.Interfaces
         where TEntity : class
     {
         TEntity Create(TEntity item);
-        TEntity FindById(int id);
+        TEntity FindById(Guid id);
         IQueryable<TEntity> Get();
         IQueryable<TEntity> Get(Func<TEntity, bool> predicate);
         void Remove(TEntity item);
