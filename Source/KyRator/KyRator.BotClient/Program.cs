@@ -12,10 +12,7 @@ namespace KyRator.BotClient
     {
         static void Main(string[] args)
         {
-            var serviceProvider = new ServiceCollection()
-                .AddEntityFrameworkSqlite().AddDbContext<KyRatorContext>()
-                .AddTransient<IDataService<Sectant>, SectantDataService>()
-                .BuildServiceProvider();
+
         }
     }
 }
