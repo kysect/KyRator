@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace KyRator
+namespace KyRator.Core
 {
     class Program
     {
