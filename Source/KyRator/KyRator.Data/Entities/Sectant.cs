@@ -12,7 +12,7 @@ namespace KyRator.Data.Entities
         public string Nickname { get; set; }
         public string FullName { get; set; }
         public string GithubProfile { get; set; }
-        public string DiscordProfile { get; set; }
         public int Points { get; set; }
+        public string DiscordId { get; set; }
     }
 }
