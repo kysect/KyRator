@@ -12,7 +12,7 @@ namespace KyRator.Data.Repositories.Interfaces
         TEntity Create(TEntity item);
         TEntity FindById(Guid id);
         IQueryable<TEntity> Get();
-        IQueryable<TEntity> Get(Func<TEntity, bool> predicate);
+        IQueryable<TEntity> Where(Func<TEntity, bool> predicate);
         void Remove(TEntity item);
         TEntity Update(TEntity item);
     }

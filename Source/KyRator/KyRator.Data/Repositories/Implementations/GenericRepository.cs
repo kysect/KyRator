@@ -24,7 +24,7 @@ namespace KyRator.Data.Repositories.Implementations
             return _dbSet;
         }
 
-        public IQueryable<TEntity> Get(Func<TEntity, bool> predicate)
+        public IQueryable<TEntity> Where(Func<TEntity, bool> predicate)
         {
             return _dbSet.Where(predicate).AsQueryable();
         }

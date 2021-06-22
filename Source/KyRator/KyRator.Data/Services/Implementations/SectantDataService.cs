@@ -29,9 +29,9 @@ namespace KyRator.Data.Services.Implementations
         {
             return _repository.Get();
         }
-        public IEnumerable<Sectant> Get(Func<Sectant, bool> predicate)
+        public IEnumerable<Sectant> Where(Func<Sectant, bool> predicate)
         {
-            return _repository.Get(predicate);
+            return _repository.Where(predicate);
         }
         public void Remove(Sectant entity)
         {
