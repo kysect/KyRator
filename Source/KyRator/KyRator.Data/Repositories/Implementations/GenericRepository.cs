@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using KyRator.Data.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,19 +16,13 @@ namespace KyRator.Data.Repositories.Implementations
             _dbSet = set;
         }
 
-        public IQueryable<TEntity> Get()
-        {
-            return _dbSet;
-        }
+        public IQueryable<TEntity> GetAll() => throw new NotImplementedException();
 
-        public IQueryable<TEntity> Where(Func<TEntity, bool> predicate)
-        {
-            return _dbSet.Where(predicate).AsQueryable();
-        }
-        public TEntity FindById(Guid id)
-        {
-            return _dbSet.Find(id);
-        }
+        public IQueryable<TEntity> Where(Func<TEntity, bool> predicate) => _dbSet.Where(predicate).AsQueryable();
+
+        public TEntity FindById(string id) => _dbSet.Find(id);
+
+        public TEntity FirstOrDefault(Func<TEntity, bool> predicate) => _dbSet.FirstOrDefault(predicate);
 
         public TEntity Create(TEntity item)
         {
@@ -39,6 +30,7 @@ namespace KyRator.Data.Repositories.Implementations
             _context.SaveChanges();
             return item;
         }
+
         public TEntity Update(TEntity item)
         {
             _dbSet.Update(item);
@@ -51,5 +43,7 @@ namespace KyRator.Data.Repositories.Implementations
             _dbSet.Remove(item);
             _context.SaveChanges();
         }
+
+        public IQueryable<TEntity> Get() => _dbSet;
     }
 }

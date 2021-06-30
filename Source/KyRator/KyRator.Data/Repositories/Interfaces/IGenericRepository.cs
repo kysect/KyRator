@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KyRator.Data.Repositories.Interfaces
 {
@@ -10,8 +7,9 @@ namespace KyRator.Data.Repositories.Interfaces
         where TEntity : class
     {
         TEntity Create(TEntity item);
-        TEntity FindById(Guid id);
-        IQueryable<TEntity> Get();
+        TEntity FindById(string id);
+        TEntity FirstOrDefault(Func<TEntity, bool> predicate);
+        IQueryable<TEntity> GetAll();
         IQueryable<TEntity> Where(Func<TEntity, bool> predicate);
         void Remove(TEntity item);
         TEntity Update(TEntity item);

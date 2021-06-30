@@ -1,11 +1,5 @@
 ﻿using KyRator.Data.Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Storage;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KyRator.Data.Repositories.Implementations
 {
@@ -13,16 +7,20 @@ namespace KyRator.Data.Repositories.Implementations
     {
         public DbSet<Sectant> Sectants { get; set; }
 
-        public KyRatorContext(DbContextOptions<KyRatorContext> options) : base(options)
+        public KyRatorContext(DbContextOptions<KyRatorContext> options)
+            : base(options)
         {
+            Database.EnsureCreated();
         }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlite("Filename=database.db");
-        }
+
         public KyRatorContext()
         {
             Database.EnsureCreated();
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlite("Filename=kybase.db");
         }
     }
 }

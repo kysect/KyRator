@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace KyRator.Data.Entities
 {
+    [Table("Sectants")]
     public class Sectant
     {
-        public Guid Id { get; set; }
+        [Key] public string DiscordId { get; set; }
+
         public string Nickname { get; set; }
-        public string FullName { get; set; }
         public string GithubProfile { get; set; }
         public int Points { get; set; }
-        public string DiscordId { get; set; }
     }
 }

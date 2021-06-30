@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace KyRator.Data.Services.Interfaces
+namespace KyRator.Data.Services
 {
     public interface IDataService<TEntity>
         where TEntity : class
     {
         TEntity Create(TEntity entity);
-        TEntity FindById(Guid id);
-        IEnumerable<TEntity> Get();
+        TEntity FindById(string id);
+        TEntity FirstOrDefault(Func<TEntity, bool> predicate);
+        IEnumerable<TEntity> GetAll();
         IEnumerable<TEntity> Where(Func<TEntity, bool> predicate);
         void Remove(TEntity entity);
         TEntity Update(TEntity entity);
