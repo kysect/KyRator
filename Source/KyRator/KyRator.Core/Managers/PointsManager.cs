@@ -13,9 +13,8 @@ namespace KyRator.Core.Managers
             _sectantDataService = sectantDataService;
         }
 
-        public void GivePoints(string discordId, int points)
+        public void GivePoints(Sectant sectant, int points)
         {
-            Sectant sectant = _sectantDataService.FirstOrDefault(el => el.DiscordId == discordId);
             if (sectant == null)
             {
                 throw new InvalidOperationException();
@@ -50,6 +49,9 @@ namespace KyRator.Core.Managers
             //TODO: make transaction
             sectantFrom.Points -= amount;
             sectantTo.Points += amount;
+            _sectantDataService.Update(sectantFrom);
+            _sectantDataService.Update(sectantTo);
+
         }
 
         public int GetPoints(string discordId)
