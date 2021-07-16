@@ -12,11 +12,11 @@ namespace KyRator.BotCommands
                                                  new[] {"Recipient", "Amount"});
 
         private PointsManager _pointsManager;
-        private SectantsManager _sectantsManaget;
+        private SectantsManager _sectantsManager;
 
         public TipCommand(SectantsManager sectantsManaget, PointsManager pointsManager)
         {
-            _sectantsManaget = sectantsManaget;
+            _sectantsManager = sectantsManaget;
             _pointsManager = pointsManager;
         }
 
@@ -28,9 +28,9 @@ namespace KyRator.BotCommands
 
             int pointsAmount = int.Parse(args.Arguments[1]);
 
-            var fromSectant = _sectantsManaget.GetOrCreateSectant(args.Sender.UserSenderId.ToString());
+            var fromSectant = _sectantsManager.GetOrCreateSectant(args.Sender.UserSenderId.ToString());
 
-            var toSectant = _sectantsManaget.GetOrCreateSectant(mentionId);
+            var toSectant = _sectantsManager.GetOrCreateSectant(mentionId);
 
             _pointsManager.SendPoints(fromSectant, toSectant, pointsAmount);
 
