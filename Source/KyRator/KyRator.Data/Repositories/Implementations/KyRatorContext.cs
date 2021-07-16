@@ -6,6 +6,7 @@ namespace KyRator.Data.Repositories.Implementations
     public class KyRatorContext : DbContext
     {
         public DbSet<Sectant> Sectants { get; set; }
+        public DbSet<Suggestion> Suggestions { get; set; }
 
         public KyRatorContext(DbContextOptions<KyRatorContext> options)
             : base(options)

@@ -1,4 +1,4 @@
-﻿using System.Threading.Tasks;
+using System.Threading.Tasks;
 using KyRator.BotCommands;
 using KyRator.Data.Entities;
 using KyRator.Data.Repositories.Implementations;
@@ -23,10 +23,15 @@ namespace KyRator.Core
             var api = new DiscordApiProvider(settings);
 
             BotManagerBuilder botManagerBuilder = new BotManagerBuilder().SetPrefix('!').SetCaseSensitive(false)
-                                                                         .AddCommand(TipCommand.Descriptor);
+                                                                         .AddCommand(TipCommand.Descriptor)
+                                                                         .AddCommand(GiveCommand.Descriptor)
+                                                                         .AddCommand(SuggestCommand.Descriptor);
 
             botManagerBuilder.ServiceCollection.AddEntityFrameworkSqlite().AddDbContext<KyRatorContext>()
-                             .AddTransient<IDataService<Sectant>, SectantDataService>().AddSingleton<SectantsManager>()
+                             .AddTransient<IDataService<Sectant>, SectantDataService>()
+                             .AddTransient<IDataService<Suggestion>, SuggestionDataService>()
+                             .AddSingleton<SectantsManager>()
+                             .AddSingleton<SuggestionManager>()
                              .AddSingleton<PointsManager>();
             BotManager botManager = botManagerBuilder.Build(api);
 
