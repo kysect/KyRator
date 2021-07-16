@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KyRator.Data", "KyRator.Data\KyRator.Data.csproj", "{706F639F-4E67-4B5B-95EE-FAA415BA4C44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KyRator.Data", "KyRator.Data\KyRator.Data.csproj", "{706F639F-4E67-4B5B-95EE-FAA415BA4C44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KyRator.Core", "KyRator.Core\KyRator.Core.csproj", "{A95D94B0-BC38-4B6D-8FDE-9CCB423ACEFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KyRator.Core", "KyRator.Core\KyRator.Core.csproj", "{A95D94B0-BC38-4B6D-8FDE-9CCB423ACEFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KyRator.BotCommands", "KyRator.BotCommands\KyRator.BotCommands.csproj", "{96ECC5FC-13D4-4B6F-91AD-B790D0420556}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KyRator.BotCommands", "KyRator.BotCommands\KyRator.BotCommands.csproj", "{96ECC5FC-13D4-4B6F-91AD-B790D0420556}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KyRator.Launch", "KyRator.Launch\KyRator.Launch.csproj", "{EE81D003-1076-46D7-BCE6-8F9C80149DAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KyRator.Launch", "KyRator.Launch\KyRator.Launch.csproj", "{EE81D003-1076-46D7-BCE6-8F9C80149DAB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kysect.BotFramework", "..\..\BotFramework\Kysect.BotFramework\Kysect.BotFramework.csproj", "{FF9956A7-7D97-4613-9DED-DC63A6E9BFC6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{EE81D003-1076-46D7-BCE6-8F9C80149DAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE81D003-1076-46D7-BCE6-8F9C80149DAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE81D003-1076-46D7-BCE6-8F9C80149DAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF9956A7-7D97-4613-9DED-DC63A6E9BFC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF9956A7-7D97-4613-9DED-DC63A6E9BFC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF9956A7-7D97-4613-9DED-DC63A6E9BFC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF9956A7-7D97-4613-9DED-DC63A6E9BFC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
