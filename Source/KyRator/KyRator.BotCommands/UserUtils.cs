@@ -2,6 +2,6 @@
 {
     public class UserUtils
     {
-        public static string ParseUserIdFromMention(string mention) => mention.Substring(2, mention.Length - 3);
+        public static string ParseUserIdFromMention(string mention) => mention.Substring(3, mention.Length - 4);
     }
 }
